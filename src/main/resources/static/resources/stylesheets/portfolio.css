@@ -256,7 +256,7 @@ html,body {
 .container > .contents > .career h3 {
     font: inherit;
     font-size: 4rem;
-    color: white;
+    color:#7d7575;
 }
 .container > .contents > .career > .history {
     display: flex;
@@ -290,7 +290,7 @@ html,body {
 .container > .contents > .skill h3{
     font: inherit;
     font-size: 4rem;
-    color: white;
+    color: #7d7575;
 }
 
 .container > .contents > .skill > .grid{
@@ -355,7 +355,7 @@ html,body {
 .container > .contents > .project h3{
     font: inherit;
     font-size: 4rem;
-    color: white;
+    color: #7d7575;
 }
 
 .container > .contents > .project > .pro{
@@ -435,7 +435,7 @@ html,body {
 .container > .contents > .contact h3{
     font: inherit;
     font-size: 4rem;
-    color: white;
+    color: #7d7575;
 }
 
 .container > .contents > .contact >.box {
