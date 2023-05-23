@@ -210,6 +210,19 @@ html,body {
     padding : 0;
 }
 
+/*js 스크롤 효과*/
+
+/*.container > .contents > section{*/
+/*    opacity: 0;*/
+/*    transform: translateY(20px);*/
+/*    transition: opacity 0.5s ease, transform 0.5s ease*/
+/*}*/
+
+/*.container > .contents > section.show{*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
+
 /*aboutMe*/
 
 .container > .contents > .aboutMe{
@@ -347,9 +360,8 @@ html,body {
 .container > .contents > .project {
     font: inherit;
     padding: 3rem 3rem 3.5rem 3rem;;
-    /*border-bottom: 0.0625rem solid #000000;*/
-    /*background-color: #4f4f48;*/
     background-color: #29acba;
+
 }
 
 .container > .contents > .project h3{
@@ -383,7 +395,11 @@ html,body {
 
     border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+
 }
+
+
 
 .container > .contents > .project > .pro > .box >.link > .left {
     /*margin-left: 7rem;*/
@@ -407,8 +423,8 @@ html,body {
 
 .container > .contents > .project > .pro > .box > .link:hover > .first {
     display: none;
-    /*transform: translateX(-100%);*/
-    transition: transform 0.5s;
+
+
 }
 
 .container > .contents > .project > .pro > .box > .link:hover > .second {
