@@ -1,0 +1,455 @@
+html {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+*{
+    /*border: 1px solid red;*/
+    box-sizing: border-box;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+기본 배치
+- <div class="container"> : 사이드바가 표시되는 화면
+- <div class="container collapse">: 사이드바가 숨겨지는 화면
+*/
+
+.container{
+    position: relative;
+}
+
+/* 사이드바 화면을 기준으로 배치*/
+.container> .sidebar{
+    background-color: #ffeaa7;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15rem;
+    /*height: 100vh;*/
+
+    padding: 1rem;
+
+    z-index: 9999;
+}
+
+/*메뉴버튼 디자인
+  -화면에 고정하고 모든 화면보다 우선 표시되도록 처리*/
+.container > .sidebar .toggle{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border: 3px solid black;
+}
+.container.collapse > .sidebar > .toggle{
+
+}
+/*
+메뉴와 화면이 겹치는 현상을 해결하기 위해 스타일 추가
+- 사이드바는 상단 여백을 부여
+- 컨텐츠영역 좌측 여백을 숨김 상태일 경우 부여
+-transition 설정
+*/
+.container > .sidebar {
+    padding-top: 4.5rem;
+}
+
+.container.collapse> .contents{
+    padding-left: 4.5rem;
+}
+
+/*사이드바 메뉴 토글 버튼 꾸미기*/
+.container > .sidebar > .toggle > span{
+    position: absolute;
+
+    width: 80%;
+    height: 10%;
+
+    background-color: black;
+}
+/*
+<div class="container> 일 경우 메뉴 모양을 표시
+<div class="container collapse">일 경우 x 모양
+*/
+.container > .sidebar > .toggle > span:nth-child(1){
+    top: 50%;
+    left: 0%;
+    width: 100%;
+    transform:translateY(-50%) rotate(45deg);
+}
+.container > .sidebar > .toggle > span:nth-child(2){
+    display: none;
+}
+.container > .sidebar > .toggle > span:nth-child(3){
+    top: 50%;
+    left: 0%;
+    width: 100%;
+    transform:translateY(-50%) rotate(-45deg);
+}
+
+.container.collapse > .sidebar > .toggle > span:nth-child(1){
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    transform: none;
+
+}
+.container.collapse > .sidebar > .toggle > span:nth-child(2){
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    display: block;
+}
+.container.collapse > .sidebar > .toggle > span:nth-child(3){
+    top: 85%;
+    left: 10%;
+    width: 80%;
+    transform: translateY(-100%);
+}
+
+/*부드럽게 처리*/
+.container>.sidebar >.toggle >span{
+    transition: all 0.3s linear;
+}
+
+/*사이드바 ul*/
+
+.container{}
+
+.container >.sidebar ul{
+    list-style-type: none;
+    height: 100vh;
+    margin-top: 4rem;
+    padding: 0;
+}
+
+
+.container>.sidebar li {
+    text-decoration: none;
+    font-size: 2rem;
+
+}
+
+.container> .sidebar ul li {
+    margin-bottom: 7rem;
+}
+
+.container >.sidebar a{
+    text-decoration: none;
+    color: black;
+}
+
+.container > .sidebar a:hover{
+    /*background-color: aqua;*/
+
+    text-decoration: underline;
+}
+.container >.sidebar ul{
+    list-style-type: none;
+    height: 100vh;
+    padding: 0;
+}
+
+
+/*
+숨김상태의 처리
+-사이드바는 화면 밖으로 이동
+-컨텐츠 영역역은 사이드바가 사라진 자리를 채움
+*/
+
+.container.collapse{
+
+}
+
+.container.collapse>.sidebar{
+    margin-left: -15rem;
+}
+
+.container.collapse> .contents{
+    left: 0;
+}
+.container > .sidebar{
+    transition-property: margin-left;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.container > .contents{
+    transition-property: left,padding-left;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+
+/*컨텐츠는 메인페이지(#container)을 기준으로 배치*/
+.container > .contents{
+    /*background-color: #74b9ff;*/
+
+
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: 15rem;
+    right: 0;
+    top: 0;
+
+    /*padding: 3rem;*/
+    padding : 0;
+}
+
+/*aboutMe*/
+
+.container > .contents > .aboutMe{
+    /*1*/
+    overflow: hidden;
+    padding: 3rem;
+    background-color: #ebf4f5;
+}
+
+.container > .contents > .aboutMe > .me{
+    float: left;
+    margin-right: 3.5rem;
+    width: 20rem;
+    height: 20rem;
+
+    border-radius: 1rem;
+}
+
+.container > .contents > .aboutMe >.text{
+    height: 20rem;
+    overflow: hidden;
+}
+
+.container > .contents > .aboutMe >.text > p{
+    margin-top: 3rem;
+
+    font: inherit;
+    font-size: 2rem;
+
+    white-space: nowrap;
+    /*text-overflow: ellipsis;*/
+    /*overflow: hidden;*/
+}
+
+/*career*/
+.container > .contents > .career{
+    /*background-color: blueviolet;*/
+    /*border-bottom: 0.0625rem solid #000000;*/
+    padding: 3rem 3rem 3.5rem 3rem;
+    /*padding-bottom: 3.5rem;*/
+    font: inherit;
+    background-color: #ebf4f5;
+}
+.container > .contents > .career h3 {
+    font: inherit;
+    font-size: 4rem;
+    color: white;
+}
+.container > .contents > .career > .history {
+    display: flex;
+}
+.container > .contents > .career >.history>.one, .two{
+    flex: 1;
+}
+
+.container > .contents > .career >.history>.one b {
+    font-size: 1.7rem;
+}
+.container > .contents > .career >.history>.one p {
+    font-size: 1.3rem;
+}
+
+.container > .contents > .career >.history>.two b {
+    font-size: 1.7rem;
+}
+.container > .contents > .career >.history>.two p {
+    font-size: 1.3rem;
+}
+
+/*skill*/
+.container > .contents > .skill{
+    font: inherit;
+    padding: 3rem 3rem 3.5rem 3rem;;
+    /*border-bottom: 0.0625rem solid #000000;*/
+    background-color: #ebba34;
+}
+
+.container > .contents > .skill h3{
+    font: inherit;
+    font-size: 4rem;
+    color: white;
+}
+
+.container > .contents > .skill > .grid{
+    align-self: stretch;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    list-style-type: none;
+    margin-block: unset;
+    margin-inline: unset;
+    padding-inline: unset;
+}
+.container > .contents > .skill > .grid > .abilities{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+    transition: transform 0.3s ease;
+}
+
+.container > .contents > .skill > .grid > .abilities:hover {
+    transform: translateY(0.5rem);
+}
+
+.container > .contents > .skill > .grid > .abilities > .image{
+    width: 9rem;
+    height: 9rem;
+    margin-right: 1rem;
+}
+
+.container > .contents > .skill > .grid > .abilities > .box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.container > .contents > .skill > .grid > .abilities > .box > .title{
+    font: inherit;
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+
+}
+
+.container > .contents > .skill > .grid > .abilities > .box > .text{
+    font: inherit;
+
+}
+
+
+/*Project*/
+.container > .contents > .project {
+    font: inherit;
+    padding: 3rem 3rem 3.5rem 3rem;;
+    /*border-bottom: 0.0625rem solid #000000;*/
+    /*background-color: #4f4f48;*/
+    background-color: #29acba;
+}
+
+.container > .contents > .project h3{
+    font: inherit;
+    font-size: 4rem;
+    color: white;
+}
+
+.container > .contents > .project > .pro{
+    list-style-type: none;
+}
+
+.container > .contents > .project > .pro > .box{
+    display: flex;
+    margin-bottom: 5rem;
+    justify-content: space-between;
+}
+
+.container > .contents > .project > .pro > .box >a{
+    flex: 0 0 auto;
+    display: block;
+    width: 33rem;
+    height: 35rem;
+}
+
+.container > .contents > .project > .pro > .box >.link > img {
+    width: 100%;
+    height: 100%;
+    margin-right: 5rem;
+    display: block;
+
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container > .contents > .project > .pro > .box >.link > .left {
+    /*margin-left: 7rem;*/
+}
+
+.container > .contents > .project > .pro > .box >.link > .right {
+    margin-right: 5rem;
+}
+
+
+.container > .contents > .project > .pro > .box > .link > .image-wrapper {
+    position: relative;
+}
+
+.container > .contents > .project > .pro > .box > .link > .image-wrapper > .second {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container > .contents > .project > .pro > .box > .link:hover > .first {
+    display: none;
+    /*transform: translateX(-100%);*/
+    transition: transform 0.5s;
+}
+
+.container > .contents > .project > .pro > .box > .link:hover > .second {
+    display: block;
+}
+
+
+.container > .contents > .project > .pro > .box > .link > .item.second {
+    display: none;
+}
+
+.container > .contents > .project > .pro > .box > .link:hover > .second {
+    display: block;
+}
+
+
+/*Contact*/
+.container > .contents > .contact{
+    font: inherit;
+    padding: 3rem 3rem 3.5rem 3rem;
+    background-color: #dfe7e8;
+}
+
+.container > .contents > .contact h3{
+    font: inherit;
+    font-size: 4rem;
+    color: white;
+}
+
+.container > .contents > .contact >.box {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.container > .contents > .contact >.box > .image {
+    margin-right: 1.5rem;
+}
+
+.container > .contents > .contact > .box > .text{
+    font: inherit;
+    font-size: 1.5rem;
+    /*margin-bottom: 0.5rem;*/
+    padding-top: 0.5rem;
+}
