@@ -23,9 +23,9 @@
         </label>
         <ul>
             <li><a href="#aboutMe">소개</a></li>
+            <li><a href="#contact">연락처</a></li>
             <li><a href="#skill">스킬</a></li>
             <li><a href="#project">프로젝트</a></li>
-            <li><a href="#contact">연락처</a></li>
         </ul>
     </div>
     <!--    컨텐츠 영역-->
@@ -33,12 +33,12 @@
         <section id="aboutMe" class="aboutMe" rel="section" data-index="1">
             <img th:src="@{/resources/image/ysh.jpg}" alt="x" class="me">
             <div class="text">
-                <p>
+                <p class="me">
                     안녕하세요
                     <br>
                     백엔드 개발자를 꿈꾸고 있는 윤석훈입니다.
                     <br>
-                    팀원들과 함께 프로젝트를 진행해 함께 개발하고 결과물을
+                    프로젝트를 진행해 함께 개발하고 결과물을
                     만드는것에
                     <br>
                     매력을 느껴 개발자의 길을 선택했습니다
@@ -64,6 +64,19 @@
                         2023.2~2023.8
                     </p>
                 </div>
+            </div>
+        </section>
+        <section id="contact" class="contact" rel="section" data-index="3">
+            <h3>Contact</h3>
+            <div class="box">
+                <img th:src="@{/resources/image/email50.png}" alt="x" class="image">
+                <span class="text one">tjrgns21@naver.com</span>
+                <img th:src="@{/resources/image/github.png}" alt="x" class="image">
+                <span class="three">git 주소</span>
+            </div>
+            <div class="box">
+                <img th:src="@{/resources/image/phone50.png}" alt="x" class="image">
+                <span class="two">010-9264-6977</span>
             </div>
         </section>
         <section id="skill" class="skill" rel="section" data-index="3">
@@ -98,7 +111,8 @@
                     <span class="text">
                         JavaScript를 이용하여 웹 페이지에 동적인 기능을 추가하고 사용자와의 상호작용을 강화할 수 있습니다.
                         <br>
-                        웹 애플리케이션의 클라이언트 측 개발에 JavaScript를 활용합니다.
+                        xhr를 이용하여 청을 보내고, 응답을 처리하여 데이터를 업데이트할 수 있습니다.
+                        .
                     </span>
                     </span>
                 </li>
@@ -137,47 +151,43 @@
                 </li>
             </ul>
         </section>
-        <section id="project" class="project" rel="section" data-index="4">
+
+        <section id="test" class="test" rel="section" data-index="4">
             <h3>Project</h3>
-            <ul class="pro">
-                <li class="box">
-                    <a href="#" class="link">
-                        <img th:src="@{/resources/image/project1.png}" alt="x" class="item left first">
-                        <img th:src="@{/resources/image/project2.png}" alt="x" class="item left second">
-                    </a>
-                    <a href="#" class="link">
-                        <img th:src="@{/resources/image/shortcut_icon.png}" alt="x" class="item right first">
-                        <img th:src="@{/resources/image/matzip_image.png}" alt="x" class="item right second">
-                    </a>
-                </li>
-                <li class="box">
-                    <a href="#" class="link">
-                        <img th:src="@{/resources/image/project5.jpg}" alt="x" class="item left first">
-                        <img th:src="@{/resources/image/project6.jpg}" alt="x" class="item left second">
-                    </a>
-                    <a href="#" class="link">
-                        <img th:src="@{/resources/image/project3.jpg}" alt="x" class="item right first">
-                        <img th:src="@{/resources/image/project4.jpg}" alt="x" class="item right second">
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <section id="contact" class="contact" rel="section" data-index="5">
-            <h3>Contact</h3>
-            <div class="box">
-                <img th:src="@{/resources/image/email50.png}" alt="x" class="image">
-                <span class="text">tjrgns21@naver.com</span>
-            </div>
-            <div class="box">
-                <img th:src="@{/resources/image/phone50.png}" alt="x" class="image">
-                <span class="text">010-9264-6977</span>
-            </div>
+            <div class="section">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
 
+                <div class="slideWrap">
+                    <ul class="slideList">
+                        <li>
+                            <a href="#">
+                                <label for="slide03" class="left"></label>
+                                <img th:src="@{/resources/image/shortcut_icon.png}" alt="x">
+                                <label for="slide02" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <label for="slide01" class="left"></label>
+                                <img th:src="@{/resources/image/project1.png}" alt="x">
+                                <label for="slide03" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <label for="slide02" class="left"></label>
+                                <img th:src="@{/resources/image/project2.png}" alt="x">
+                                <label for="slide01" class="right"></label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
-
 
     </div>
-
 </div>
 </body>
 </html>

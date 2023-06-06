@@ -11,7 +11,57 @@ html,body {
     margin: 0;
     padding: 0;
 }
+/*모바일 사이드바*/
+@media (max-width: 768px) {
+    .container > .sidebar {
+        width: 6rem;
+        padding: 0.5rem;
+    }
 
+    .container > .sidebar .toggle {
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .container > .sidebar > .toggle > span {
+        width: 60%;
+    }
+
+    .container > .sidebar > .toggle > span:nth-child(1) {
+        top: 25%;
+        left: 10%;
+    }
+
+    .container > .sidebar > .toggle > span:nth-child(2) {
+        top: 50%;
+        left: 10%;
+    }
+
+    .container > .sidebar > .toggle > span:nth-child(3) {
+        top: 75%;
+        left: 10%;
+    }
+
+    .container > .sidebar > .toggle > span:nth-child(2),
+    .container > .sidebar > .toggle > span:nth-child(3) {
+        width: 80%;
+    }
+
+    .container > .sidebar > .toggle > span:nth-child(2),
+    .container > .sidebar > .toggle > span:nth-child(3) {
+        transform: translateY(-50%);
+    }
+
+    .container > .sidebar ul {
+        margin-top: 2rem;
+    }
+
+    .container > .sidebar ul li {
+        margin-bottom: 2rem;
+    }
+}
 /*
 기본 배치
 - <div class="container"> : 사이드바가 표시되는 화면
@@ -210,66 +260,66 @@ html,body {
     padding : 0;
 }
 
-/*js 스크롤 효과*/
-
-/*.container > .contents > section{*/
-/*    opacity: 0;*/
-/*    transform: translateY(20px);*/
-/*    transition: opacity 0.5s ease, transform 0.5s ease*/
-/*}*/
-
-/*.container > .contents > section.show{*/
-/*    opacity: 1;*/
-/*    transform: translateY(0);*/
-/*}*/
 
 /*aboutMe*/
 
-.container > .contents > .aboutMe{
-    /*1*/
+.container > .contents > .aboutMe {
+    display: flex;
+    align-items: center;
     overflow: hidden;
     padding: 3rem;
     background-color: #ebf4f5;
 }
 
-.container > .contents > .aboutMe > .me{
+.container > .contents > .aboutMe > .me {
     float: left;
     margin-right: 3.5rem;
     width: 20rem;
     height: 20rem;
-
     border-radius: 1rem;
 }
 
-.container > .contents > .aboutMe >.text{
+.container > .contents > .aboutMe > .text {
     height: 20rem;
     overflow: hidden;
 }
 
-.container > .contents > .aboutMe >.text > p{
+.container > .contents > .aboutMe > .text > p {
     margin-top: 3rem;
-
     font: inherit;
     font-size: 2rem;
-
     white-space: nowrap;
     /*text-overflow: ellipsis;*/
     /*overflow: hidden;*/
 }
 
+@media (max-width: 768px) {
+    .container > .contents > .aboutMe {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container > .contents > .aboutMe > .me {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    .container > .contents > .aboutMe > .text > p {
+        font-size: 16px;
+        word-wrap: break-word;
+    }
+}
+
 /*career*/
 .container > .contents > .career{
-    /*background-color: blueviolet;*/
-    /*border-bottom: 0.0625rem solid #000000;*/
     padding: 3rem 3rem 3.5rem 3rem;
-    /*padding-bottom: 3.5rem;*/
     font: inherit;
     background-color: #ebf4f5;
 }
 .container > .contents > .career h3 {
     font: inherit;
     font-size: 4rem;
-    color:#7d7575;
+    color: #000;
 }
 .container > .contents > .career > .history {
     display: flex;
@@ -292,6 +342,57 @@ html,body {
     font-size: 1.3rem;
 }
 
+/*모바일 career*/
+@media (max-width: 768px) {
+    .container > .contents > .career > .history {
+        flex-direction: column;
+    }
+}
+
+/*Contact*/
+.container > .contents > .contact{
+    font: inherit;
+    padding: 3rem 3rem 3.5rem 3rem;
+    background-color: #dfe7e8;
+}
+
+.container > .contents > .contact h3{
+    font: inherit;
+    font-size: 4rem;
+    color: #000;
+}
+
+.container > .contents > .contact >.box {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.container > .contents > .contact >.box > .image {
+    margin-right: 1.5rem;
+}
+
+.container > .contents > .contact > .box > .text{
+    font: inherit;
+    font-size: 1.5rem;
+    /*margin-bottom: 0.5rem;*/
+    padding-top: 0.5rem;
+}
+.container > .contents > .contact > .box > .one {
+    margin-right: 18rem;
+}
+
+/*모바일 contact*/
+@media (max-width: 768px) {
+    .container > .contents > .contact > .box {
+        flex-direction: column;
+    }
+
+    .container > .contents > .contact > .box > .image {
+        width: 50px;
+    }
+
+}
+
 /*skill*/
 .container > .contents > .skill{
     font: inherit;
@@ -303,7 +404,7 @@ html,body {
 .container > .contents > .skill h3{
     font: inherit;
     font-size: 4rem;
-    color: #7d7575;
+    color: #000;
 }
 
 .container > .contents > .skill > .grid{
@@ -331,8 +432,8 @@ html,body {
 }
 
 .container > .contents > .skill > .grid > .abilities > .image{
-    width: 9rem;
-    height: 9rem;
+    width: 7rem;
+    height: 7rem;
     margin-right: 1rem;
 }
 
@@ -355,117 +456,84 @@ html,body {
 
 }
 
-
-/*Project*/
-.container > .contents > .project {
-    font: inherit;
-    padding: 3rem 3rem 3.5rem 3rem;;
-    background-color: #29acba;
-
+/*모바일 skill*/
+@media (max-width: 768px) {
+    .container > .contents > .skill > .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.container > .contents > .project h3{
+
+
+
+
+
+/*project*/
+.container > .contents > .test{
+    font: inherit;
+    padding: 3rem 3rem 3.5rem 3rem;
+    background-color: #29acba;
+}
+
+.container > .contents > .test h3{
     font: inherit;
     font-size: 4rem;
-    color: #7d7575;
+    color: #000;
 }
 
-.container > .contents > .project > .pro{
-    list-style-type: none;
+.container > .contents > .test > .section input[id*="slide"] {
+    display: none;
+}
+.container > .contents > .test > .section .slideWrap {
+    max-width: 33rem;
+    max-height: 35rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.container > .contents > .test > .section .slideList{
+    white-space: nowrap;
+    font-size: 0;
 }
 
-.container > .contents > .project > .pro > .box{
-    display: flex;
-    margin-bottom: 5rem;
-    justify-content: space-between;
-}
-
-.container > .contents > .project > .pro > .box >a{
-    flex: 0 0 auto;
-    display: block;
-    width: 33rem;
-    height: 35rem;
-}
-
-.container > .contents > .project > .pro > .box >.link > img {
+.container > .contents > .test > .section .slideList > li{
+    display: inline-block;
+    vertical-align: center;
     width: 100%;
     height: 100%;
-    margin-right: 5rem;
+
+    transition: all 0.5s;
+}
+
+.container > .contents > .test > .section .slideList > li >a{
     display: block;
-
-    border-radius: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
-
-}
-
-
-
-.container > .contents > .project > .pro > .box >.link > .left {
-    /*margin-left: 7rem;*/
-}
-
-.container > .contents > .project > .pro > .box >.link > .right {
-    margin-right: 5rem;
-}
-
-
-.container > .contents > .project > .pro > .box > .link > .image-wrapper {
     position: relative;
 }
 
-.container > .contents > .project > .pro > .box > .link > .image-wrapper > .second {
-    display: none;
+.container > .contents > .test > .section .slideList > li >a img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.container > .contents > .test > .section .slideList label {
     position: absolute;
-    top: 0;
-    left: 0;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    cursor: pointer;
 }
 
-.container > .contents > .project > .pro > .box > .link:hover > .first {
-    display: none;
-
-
+.container > .contents > .test > .section .slideList .left{
+    left: 30px;
+    background: url("../image/left.png") center center / 100% no-repeat;
 }
 
-.container > .contents > .project > .pro > .box > .link:hover > .second {
-    display: block;
+.container > .contents > .test > .section .slideList .right{
+    right: 30px;
+    background: url("../image/right.png") center center / 100% no-repeat;
 }
+.container > .contents > .test > .section [id="slide01"]:checked ~ .slideWrap .slideList > li {transform: translateX(0%);}
 
-
-.container > .contents > .project > .pro > .box > .link > .item.second {
-    display: none;
-}
-
-.container > .contents > .project > .pro > .box > .link:hover > .second {
-    display: block;
-}
-
-
-/*Contact*/
-.container > .contents > .contact{
-    font: inherit;
-    padding: 3rem 3rem 3.5rem 3rem;
-    background-color: #dfe7e8;
-}
-
-.container > .contents > .contact h3{
-    font: inherit;
-    font-size: 4rem;
-    color: #7d7575;
-}
-
-.container > .contents > .contact >.box {
-    display: flex;
-    margin-bottom: 0.5rem;
-}
-
-.container > .contents > .contact >.box > .image {
-    margin-right: 1.5rem;
-}
-
-.container > .contents > .contact > .box > .text{
-    font: inherit;
-    font-size: 1.5rem;
-    /*margin-bottom: 0.5rem;*/
-    padding-top: 0.5rem;
-}
+.container > .contents > .test > .section [id="slide02"]:checked ~ .slideWrap .slideList > li {transform: translateX(-100%);}
+.container > .contents > .test > .section [id="slide03"]:checked ~ .slideWrap .slideList > li {transform: translateX(-200%);}
