@@ -12,55 +12,13 @@ html,body {
     padding: 0;
 }
 /*모바일 사이드바*/
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .container > .sidebar {
-        width: 20px;
-        padding: 0.5rem;
-    }
-
-    .container > .sidebar .toggle {
-        top: 0.5rem;
-        left: 0.5rem;
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .container > .sidebar > .toggle > span {
-        width: 60%;
-    }
-
-    .container > .sidebar > .toggle > span:nth-child(1) {
-        top: 25%;
-        left: 10%;
-    }
-
-    .container > .sidebar > .toggle > span:nth-child(2) {
-        top: 50%;
-        left: 10%;
-    }
-
-    .container > .sidebar > .toggle > span:nth-child(3) {
-        top: 75%;
-        left: 10%;
-    }
-
-    .container > .sidebar > .toggle > span:nth-child(2),
-    .container > .sidebar > .toggle > span:nth-child(3) {
-        width: 80%;
-    }
-
-    .container > .sidebar > .toggle > span:nth-child(2),
-    .container > .sidebar > .toggle > span:nth-child(3) {
-        transform: translateY(-50%);
-    }
-
-    .container > .sidebar ul {
-        margin-top: 2rem;
+        width: 10rem;
     }
 
     .container > .sidebar ul li {
-        font-size: 13px;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 }
 /*
@@ -306,7 +264,7 @@ html,body {
         width: 100%;
     }
     .container > .contents > .aboutMe > .text > p {
-        font-size: 16px;
+        font-size: 17px;
         word-wrap: break-word;
     }
 }
