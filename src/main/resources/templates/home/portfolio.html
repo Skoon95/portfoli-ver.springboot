@@ -66,6 +66,19 @@
                 </div>
             </div>
         </section>
+        <section id="contact" class="contact" rel="section" data-index="5">
+            <h3>Contact</h3>
+            <div class="box">
+                <img th:src="@{/resources/image/email50.png}" alt="x" class="image">
+                <span class="text one">tjrgns21@naver.com</span>
+                <img th:src="@{/resources/image/github.png}" alt="x" class="image">
+                <span class="text">git 주소</span>
+            </div>
+            <div class="box">
+                <img th:src="@{/resources/image/phone50.png}" alt="x" class="image">
+                <span class="text">010-9264-6977</span>
+            </div>
+        </section>
         <section id="skill" class="skill" rel="section" data-index="3">
             <h3>skill</h3>
             <ul class="grid">
@@ -137,44 +150,41 @@
                 </li>
             </ul>
         </section>
-        <section id="project" class="project" rel="section" data-index="4">
+        <section id="project" class="test section">
             <h3>Project</h3>
-            <ul class="pro">
-                <li class="box">
-                    <a href="#" class="link">
-                        <img th:src="@{/resources/image/project1.png}" alt="x" class="item left first">
-                        <img th:src="@{/resources/image/project2.png}" alt="x" class="item left second">
-                    </a>
-                    <a href="#" class="link">
-                        <img th:src="@{/resources/image/shortcut_icon.png}" alt="x" class="item right first">
-                        <img th:src="@{/resources/image/matzip_image.png}" alt="x" class="item right second">
-                    </a>
-                </li>
-                <li class="box">
-                    <a href="#" class="link">
-                        <img th:src="@{/resources/image/project5.jpg}" alt="x" class="item left first">
-                        <img th:src="@{/resources/image/project6.jpg}" alt="x" class="item left second">
-                    </a>
-                    <a href="#" class="link">
-                        <img th:src="@{/resources/image/project3.jpg}" alt="x" class="item right first">
-                        <img th:src="@{/resources/image/project4.jpg}" alt="x" class="item right second">
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <section id="contact" class="contact" rel="section" data-index="5">
-            <h3>Contact</h3>
-            <div class="box">
-                <img th:src="@{/resources/image/email50.png}" alt="x" class="image">
-                <span class="text">tjrgns21@naver.com</span>
-            </div>
-            <div class="box">
-                <img th:src="@{/resources/image/phone50.png}" alt="x" class="image">
-                <span class="text">010-9264-6977</span>
-            </div>
+            <section class="section">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+
+                <div class="slideWrap">
+                    <ul class="slideList">
+                        <li>
+                            <a>
+                                <label for="slide03" class="left"></label>
+                                <img th:src="@{/resources/image/shortcut_icon.png}" alt="">
+                                <label for="slide02" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <label for="slide01" class="left"></label>
+                                <img th:src="@{/resources/image/project1.png}" alt="">
+                                <label for="slide03" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <label for="slide02" class="left"></label>
+                                <img th:src="@{/resources/image/project2.png}" alt="">
+                                <label for="slide01" class="right"></label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
         </section>
-
 
     </div>
 
